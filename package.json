@@ -1,0 +1,46 @@
+{
+    "name": "quandry",
+    "displayName": "Quandry Language Extension",
+    "publisher": "LukeBalizet",
+    "license": "Unlicense",
+    "description": "Quandry language support for CSE 3341 at OSU",
+    "version": "0.1.0",
+    "engines": {
+        "vscode": "^1.63.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "icon": "icons/quandry-icon.png",
+    "homepage": "https://github.com/LukeBalizet/quandry-vscextension",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LukeBalizet/quandry-vscextension.git"
+    },
+    "contributes": {
+        "languages": [
+            {
+                "id": "quandry",
+                "aliases": [
+                    "Quandry",
+                    "quandry"
+                ],
+                "extensions": [
+                    "q"
+                ],
+                "icon": {
+                    "light": "icons/quandry-icon.png",
+                    "dark": "icons/quandry-icon.png"
+                },
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "quandry",
+                "scopeName": "source.quandry",
+                "path": "./syntaxes/quandry.tmLanguage.json"
+            }
+        ]
+    }
+}

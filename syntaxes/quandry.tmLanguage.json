@@ -1,0 +1,91 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "Quandry",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#code"
+        }
+    ],
+    "repository": {
+        "code": {
+            "patterns": [
+                {
+                    "include": "#constants"
+                },
+                {
+                    "include": "#keywords"
+                },
+                {
+                    "include": "#storage"
+                },
+                {
+                    "include": "#function-call"
+                }
+            ]
+        },
+        "comments": {
+            "patterns": [
+                {
+                    "begin": "/\\*",
+                    "end": "\\*/",
+                    "name": "comment.block.quandry"
+                }
+            ]
+        },
+        "constants": {
+            "patterns": [
+                {
+                    "name": "constant.numeric.quandry",
+                    "match": "\\b(\\d+)\\b"
+                },
+                {
+                    "name": "constant.language.quandry",
+                    "match": "\\b(nil)\\b"
+                }
+            ]
+        },
+        "function-call": {
+            "name": "meta.function-call.quandry",
+            "begin": "([a-zA-Z_]\\w*)\\s*\\(",
+            "beginCaptures": {
+                "1": {
+                    "name": "entity.name.function.quandry"
+                }
+            },
+            "end": "\\)",
+            "patterns": [
+                {
+                    "include": "#code"
+                }
+            ]
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.quandry",
+                    "match": "\\b(if|else|while|return)\\b"
+                },
+                {
+                    "name": "keyword.operator.quandry",
+                    "match": "\\+|-|\\*|\\.|=|<=|>=|==|!=|>|<|&&|\\|\\||!"
+                }
+            ]
+        },
+        "storage": {
+            "patterns": [
+                {
+                    "name": "storage.type.quandry",
+                    "match": "\\b(int|Ref|Q)\\b"
+                },
+                {
+                    "name": "storage.modifier.quandry",
+                    "match": "\\b(mutable)\\b"
+                }
+            ]
+        }
+    },
+    "scopeName": "source.quandry"
+}
