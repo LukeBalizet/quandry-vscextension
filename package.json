@@ -4,7 +4,7 @@
     "publisher": "LukeBalizet",
     "license": "Unlicense",
     "description": "Quandry language support for CSE 3341 at OSU",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "engines": {
         "vscode": "^1.63.0"
     },
